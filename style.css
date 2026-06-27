@@ -1,0 +1,230 @@
+/* ============================================================
+   DISTINCT BUILD — Architecture & Construction
+   Hand-coded site styles. One file, shared across all pages.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --paper:#F7F5F1;      /* warm white background */
+  --paper-2:#EFEBE3;    /* secondary panel */
+  --ink:#17181A;        /* near-black */
+  --ink-soft:#2A2B2E;
+  --stone:#6B6A66;      /* muted gray text */
+  --line:#E1DBD1;       /* hairlines */
+  --accent:#2E4A38;     /* deep spruce green — matches the db logo */
+  --accent-hover:#21381F;
+  --forest:#223A2C;     /* deep spruce — warm dark section background */
+  --maxw:1240px;
+  --pad:clamp(20px,5vw,72px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- Type ---------- */
+h1,h2,h3,.display{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.04;letter-spacing:-.01em}
+.kicker{
+  font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);
+}
+.lead{font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--ink-soft);font-weight:300}
+.muted{color:var(--stone)}
+.serif{font-family:'Fraunces',Georgia,serif}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{padding:clamp(64px,9vw,128px) 0}
+.rule{height:1px;background:var(--line);border:0}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,245,241,.86);backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--maxw);margin:0 auto;padding:16px var(--pad)}
+.brand{display:flex;align-items:center;gap:13px}
+.brand .db{
+  font-family:'Inter';font-weight:800;font-size:1.5rem;line-height:.85;letter-spacing:-.045em;
+  color:var(--accent);padding-right:13px;border-right:1.5px solid var(--line)}
+.brand-words{display:flex;flex-direction:column;gap:3px}
+.brand .mark{
+  font-family:'Inter';font-weight:700;letter-spacing:.13em;text-transform:none;
+  font-size:.9rem;color:var(--accent);line-height:1}
+.brand .tag{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);line-height:1}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.82rem;letter-spacing:.06em;color:var(--ink-soft);padding:6px 0;position:relative}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active::after,.nav-links a:hover::after{
+  content:"";position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--accent)}
+.nav-cta{
+  font-size:.78rem!important;letter-spacing:.08em;border:1px solid var(--ink);
+  padding:9px 18px!important;border-radius:2px;color:var(--ink)!important}
+.nav-cta:hover{background:var(--ink);color:var(--paper)!important}
+.nav-cta::after{display:none!important}
+.menu-btn{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--ink)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;font-size:.82rem;letter-spacing:.08em;padding:14px 28px;border-radius:2px;
+  transition:.2s;cursor:pointer;border:1px solid var(--ink)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:var(--accent);border-color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-light{border-color:var(--paper);color:var(--paper)}
+.btn-light:hover{background:var(--paper);color:var(--ink)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:min(80vh,700px);display:flex;align-items:flex-end;
+  background:var(--forest);color:var(--paper);overflow:hidden}
+.hero .ph{position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(15,16,18,.15) 0%,rgba(15,16,18,.55) 70%,rgba(15,16,18,.82) 100%),
+    repeating-linear-gradient(135deg,#1d1f22 0 2px,#202327 2px 26px);
+  display:flex;align-items:center;justify-content:center}
+.hero .ph span{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(247,245,241,.35)}
+.hero-in{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;width:100%;
+  padding:clamp(88px,11vh,120px) var(--pad) clamp(44px,6vw,80px)}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.9rem);max-width:16ch;font-weight:400}
+.hero .lead{color:rgba(247,245,241,.78);max-width:46ch;margin-top:22px}
+.hero .kicker{color:rgba(247,245,241,.7)}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* ---------- Generic media placeholder ---------- */
+.media{position:relative;background:var(--paper-2);overflow:hidden;border:1px solid var(--line);border-radius:10px}
+.media::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;text-align:center;padding:20px;
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:#A8A296;
+  background:repeating-linear-gradient(135deg,#EFEBE3 0 2px,#E8E3DA 2px 22px)}
+.media.r43{aspect-ratio:4/3}
+.media.r32{aspect-ratio:3/2}
+.media.r11{aspect-ratio:1/1}
+.media.r169{aspect-ratio:16/9}
+
+/* ---------- Intro / statement ---------- */
+.statement h2{font-size:clamp(1.8rem,3.6vw,3rem);max-width:20ch}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
+.cols-4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.4vw,34px)}
+.stack>*+*{margin-top:18px}
+
+/* ---------- Discipline cards ---------- */
+.disc{border-top:1px solid var(--ink);padding-top:22px}
+.disc .n{font-family:'Fraunces';font-size:.95rem;color:var(--accent)}
+.disc h3{font-size:1.5rem;margin:10px 0 8px}
+.disc p{color:var(--stone);font-size:.95rem}
+
+/* ---------- Work grid ---------- */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+.work-card{display:block;group:work}
+.work-card .media{transition:.4s}
+.work-card:hover .media{transform:scale(1.01)}
+.work-card .meta{display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:16px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.work-card h3{font-size:1.5rem;font-weight:400}
+.work-card .loc{font-size:.78rem;letter-spacing:.04em;color:var(--stone);text-align:right}
+.tag-pill{display:inline-block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);border:1px solid var(--line);padding:4px 10px;border-radius:30px;margin-top:14px}
+
+/* ---------- Principals ---------- */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px)}
+.person .media{margin-bottom:20px}
+.person h3{font-size:1.6rem;font-weight:400}
+.person .role{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:6px 0 14px}
+.person p{color:var(--stone);font-size:.96rem}
+
+/* ---------- Process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.5vw,34px)}
+.step .n{font-family:'Fraunces';font-size:2.4rem;color:var(--line);line-height:1}
+.step h4{font-size:1.05rem;margin:10px 0 6px;font-weight:600}
+.step p{font-size:.88rem;color:var(--stone)}
+
+/* ---------- Real images ---------- */
+.media.filled{background-size:cover;background-position:center}
+.media.filled::after{display:none}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-scrim{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(22,34,26,.12) 0%,rgba(22,34,26,.5) 62%,rgba(22,34,26,.86) 100%)}
+
+/* ---------- Project gallery ---------- */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px)}
+.g-item.wide{grid-column:1/-1}
+.g-img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px}
+.g-item figcaption{font-size:.8rem;color:var(--stone);margin-top:10px;letter-spacing:.02em}
+
+/* ---------- Process phases ---------- */
+.phase{display:grid;grid-template-columns:120px 1fr;gap:clamp(20px,4vw,60px);
+  padding:clamp(30px,5vw,52px) 0;border-top:1px solid var(--line);align-items:start}
+.phase:last-child{border-bottom:1px solid var(--line)}
+.phase-n{font-family:'Fraunces';font-size:clamp(2.3rem,5vw,3.4rem);color:var(--accent);line-height:.9}
+.phase-body h2{font-size:clamp(1.5rem,2.8vw,2.1rem);margin-bottom:12px}
+.phase-body p{max-width:64ch}
+
+/* ---------- Dark band / CTA ---------- */
+.band{background:var(--forest);color:var(--paper)}
+.band .kicker{color:rgba(247,245,241,.65)}
+.band h2{font-size:clamp(1.9rem,4vw,3.2rem);max-width:18ch}
+.band p{color:rgba(247,245,241,.72);max-width:50ch}
+
+/* ---------- Stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:40px 0}
+.stat .num{font-family:'Fraunces';font-size:clamp(2rem,4vw,3rem);line-height:1}
+.stat .lab{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-top:8px}
+
+/* ---------- Contact form ---------- */
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.cform .full{grid-column:1/-1}
+.cform label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--stone);margin-bottom:7px}
+.cform input,.cform select,.cform textarea{
+  width:100%;padding:13px 14px;border:1px solid var(--line);background:#fff;border-radius:2px;
+  font-family:inherit;font-size:.95rem;color:var(--ink)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--accent)}
+.cform textarea{min-height:140px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+
+/* ---------- Footer ---------- */
+.foot{background:var(--forest);color:rgba(247,245,241,.7);padding:64px 0 40px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.foot-brand{display:flex;align-items:center;gap:12px}
+.foot .db{font-family:'Inter';font-weight:800;font-size:1.7rem;line-height:.85;letter-spacing:-.045em;
+  color:var(--paper);padding-right:12px;border-right:1.5px solid rgba(247,245,241,.2)}
+.foot .mark{font-family:'Inter';font-weight:700;letter-spacing:.13em;text-transform:none;
+  color:var(--paper);font-size:.98rem}
+.foot .tag{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,245,241,.45);margin-top:8px}
+.foot h5{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,241,.5);margin-bottom:16px}
+.foot a{display:block;font-size:.9rem;color:rgba(247,245,241,.78);padding:4px 0}
+.foot a:hover{color:var(--paper)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  margin-top:48px;padding-top:24px;border-top:1px solid rgba(247,245,241,.12);
+  font-size:.74rem;color:rgba(247,245,241,.5)}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1100px){.cols-4{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){
+  .nav-links{position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:8px var(--pad) 20px;
+    transform:translateY(-130%);transition:.3s;box-shadow:0 20px 40px rgba(0,0,0,.06)}
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links a.nav-cta{text-align:center;margin-top:14px;border:1px solid var(--ink)}
+  .menu-btn{display:block}
+  .two-col,.cols-3,.cols-4,.work-grid,.people,.steps,.stats,.foot-grid,.cform{grid-template-columns:1fr}
+  .steps{gap:28px}
+  .stats{gap:24px}
+  .phase{grid-template-columns:1fr;gap:6px}
+  .gallery{grid-template-columns:1fr}
+}

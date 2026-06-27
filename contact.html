@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inquire — Distinct Build</title>
+<meta name="description" content="Inquire with Distinct Build — about a home, a site or land opportunity, or a collaboration. Serving Washington DC, Maryland, and Virginia.">
+<link rel="canonical" href="https://distinct-build.com/contact.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><span class="db">db</span><span class="brand-words"><span class="mark">distinct-build</span><span class="tag">Architecture &amp; Construction</span></span></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="nav">
+      <a href="work.html">Work</a>
+      <a href="approach.html">Approach</a>
+      <a href="process.html">Process</a>
+      <a href="building-standards.html">Standards</a>
+      <a href="partners.html">Partners</a>
+      <a href="contact.html" class="nav-cta">Inquire</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding-bottom:40px">
+  <div class="wrap">
+    <p class="kicker">Inquire</p>
+    <h1 class="serif" style="font-size:clamp(2.4rem,5.5vw,4.2rem);max-width:15ch;margin-top:16px">Start a conversation.</h1>
+    <p class="lead" style="max-width:58ch;margin-top:22px">Whether you're interested in a finished home, want to commission your own, have land or a site to bring, or want to talk about a collaboration — tell us a little and we'll be in touch. We keep the circle small and discretion holds.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap two-col" style="align-items:start">
+    <!-- FORM -->
+    <form name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="inquiry">
+      <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="cform">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel">
+        </div>
+        <div>
+          <label for="type">I'm reaching out about</label>
+          <select id="type" name="inquiry-type">
+            <option value="">Select…</option>
+            <option>A home / availability</option>
+            <option>Commissioning my own home (design-build)</option>
+            <option>Land or a site / JV opportunity</option>
+            <option>A collaboration</option>
+            <option>Press / media</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="role">I am a</label>
+          <select id="role" name="role">
+            <option value="">Select…</option>
+            <option>Prospective buyer</option>
+            <option>Homeowner / commissioning client</option>
+            <option>Agent / broker</option>
+            <option>Landowner / developer</option>
+            <option>Architect / designer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" placeholder="City / County, DC·MD·VA">
+        </div>
+        <div class="full">
+          <label for="message">Tell us more</label>
+          <textarea id="message" name="message" placeholder="A few details on the home, the site, or what you have in mind…"></textarea>
+        </div>
+        <div class="full">
+          <button type="submit" class="btn btn-dark">Send Inquiry</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- ASIDE -->
+    <div class="stack" style="padding-left:0">
+      <div class="media r11" data-label="Home / job-site photo" style="margin-bottom:8px"></div>
+      <div>
+        <h5 style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:8px">Email</h5>
+        <a href="mailto:hello@distinct-build.com" style="border-bottom:1px solid var(--accent);padding-bottom:2px">hello@distinct-build.com</a>
+      </div>
+      <div>
+        <h5 style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin:18px 0 8px">Developing in</h5>
+        <p class="muted">Washington DC · Maryland · Virginia</p>
+      </div>
+      <p class="muted" style="font-size:.86rem;margin-top:18px">We develop a limited number of homes at a time so each one gets the attention it deserves. Discretion assured.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="db">db</span><div><div class="mark">distinct-build</div><div class="tag">Architecture &amp; Construction</div></div></div>
+        <p style="margin-top:18px;max-width:38ch;color:rgba(247,245,241,.6);font-size:.9rem">A partnership between an architect and a builder, developing distinct homes across Washington DC, Maryland, and Virginia.</p>
+      </div>
+      <div><h5>Explore</h5>
+        <a href="work.html">Work</a><a href="approach.html">Approach</a><a href="process.html">Process</a><a href="building-standards.html">Standards</a><a href="partners.html">Partners</a><a href="contact.html">Inquire</a>
+      </div>
+      <div><h5>Connect</h5>
+        <a href="mailto:hello@distinct-build.com">hello@distinct-build.com</a>
+        <a href="contact.html">Inquire</a>
+        <span class="tag" style="margin-top:14px;display:block">DC · MD · VA</span>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Distinct Build. All rights reserved.</span><span>distinct-build.com</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
