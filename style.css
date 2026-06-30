@@ -166,6 +166,8 @@ section{padding:clamp(64px,9vw,128px) 0}
 .breath .credit{position:absolute;right:clamp(16px,3vw,34px);bottom:clamp(14px,2.4vw,26px);z-index:2;
   font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,241,.82)}
 .breath .credit em{font-style:normal;color:rgba(247,245,241,.6)}
+.breath.show-all{height:auto}
+.breath.show-all img{position:relative;inset:auto;height:auto;object-fit:fill}
 
 /* ---------- Project gallery ---------- */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px)}
